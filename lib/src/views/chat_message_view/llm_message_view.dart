@@ -49,27 +49,29 @@ class LlmMessageView extends StatelessWidget {
 
                 return Stack(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Container(
-                        height: 20,
-                        width: 20,
-                        decoration: llmStyle.iconDecoration,
-                        child: Icon(
-                          llmStyle.icon,
-                          color: llmStyle.iconColor,
-                          size: 12,
-                        ),
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(top: 10),
+                    //   child: Container(
+                    //     height: 20,
+                    //     width: 20,
+                    //     decoration: llmStyle.iconDecoration,
+                    //     child: Icon(
+                    //       llmStyle.icon,
+                    //       color: llmStyle.iconColor,
+                    //       size: 12,
+                    //     ),
+                    //   ),
+                    // ),
                     HoveringButtons(
                       isUserMessage: false,
                       chatStyle: chatStyle,
                       clipboardText: text,
                       child: Container(
                         decoration: llmStyle.decoration,
-                        margin: const EdgeInsets.only(left: 28),
-                        padding: const EdgeInsets.all(8),
+                        margin: const EdgeInsets.only(left: 0),
+                        padding: text == null
+                            ?const EdgeInsets.only(left:8,top:0,right: 8,bottom: 0):
+                            const EdgeInsets.all(8),
                         child:
                             text == null
                                 ? SizedBox(
